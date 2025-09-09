@@ -1,0 +1,96 @@
+\documentclass[12pt, reqno]{amsart}
+\usepackage{amsmath, amsthm, amscd, amsfonts, amssymb, graphicx, xcolor, tikz-cd}
+\usepackage[bookmarksnumbered, colorlinks, plainpages]{hyperref}
+
+\textheight 22.5truecm \textwidth 14.5truecm
+\setlength{\oddsidemargin}{0.35in}\setlength{\evensidemargin}{0.35in}
+
+\setlength{\topmargin}{-.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\begin{document}
+\setcounter{page}{1}
+
+\color{darkgray}{
+\noindent 
+
+
+\centerline{}
+
+\centerline{}
+
+
+\title[Notes on Model Theories]{Notes on Model Theories}
+
+
+\author{Xingzhi Huang}
+
+ \maketitle
+
+\section{Structures}
+
+\begin{definition}
+    A structure $\mathcal{A}:= (A, \{R_i^{\mathcal{A}}\}_{i\in I}, \{f_j^{\mathcal{A}}\}_{j\in J}, \{c_k^{\mathcal{A}}\}_{k\in K})$ consists of: 
+    
+    1. a non-empty set $A$, called the universe of $\mathcal{A}$
+    
+    2. a relation $R_i^{\mathcal{A}}$ on $A$ for each $i\in I$
+    
+    3. a function $f_j^{\mathcal{A}}: A^{n_j}\to A$ for each $j\in J$
+
+    4. an element $c_k^{\mathcal{A}}\in A$ for each $k\in K$.
+
+    The sets $I, J, K$ are disjoint index sets. The arity of $R_i^{\mathcal{A}}$ is some natural number $m_i$, and the arity of $f_j^{\mathcal{A}}$ is some natural number $n_j$.
+\end{definition}
+
+\begin{definition}
+    Given a structure $\mathcal{A}= (A, \{R_i^{\mathcal{A}}\}_{i\in I}, \{f_j^{\mathcal{A}}\}_{j\in J}, \{c_k^{\mathcal{A}}\}_{k\in K})$, the signature $L_\mathcal{A}$ of $\mathcal{A}$ is the collection of symbols $\{R_i\}_{i\in I}, \{f_j\}_{j\in J}, \{c_k\}_{k\in K}$, where $R_i$ is a relation symbol of arity $m_i$, $f_j$ is a function symbol of arity $n_j$, and $c_k$ is a constant symbol.
+\end{definition}
+
+\begin{definition}
+    Fix a signature $L$. An $L$-structure is a structure whose signature is $L$.
+\end{definition}
+
+\begin{definition}
+    We can define a category of $L$-structures, denoted by $Str(L)$, as follows.
+    
+    The objects of $Str(L)$ are all $L$-structures. If $\mathcal{A}$ and $\mathcal{B}$ are two $L$-structures, then a morphism from $\mathcal{A}$ to $\mathcal{B}$ is a function $h: A\to B$ such that:
+
+    1. for each relation symbol $R_i$ of arity $m_i$ in $L$, and for all $a_1, a_2, \ldots, a_{m_i}\in A$, if $(a_1, a_2, \ldots, a_{m_i})\in R_i^{\mathcal{A}}$, then $(h(a_1), h(a_2), \ldots, h(a_{m_i}))\in R_i^{\mathcal{B}}$;
+
+    2. for each function symbol $f_j$ of arity $n_j$ in $L$, and for all $a_1, a_2, \ldots, a_{n_j}\in A$, we have $h(f_j^{\mathcal{A}}(a_1, a_2, \ldots, a_{n_j})) = f_j^{\mathcal{B}}(h(a_1), h(a_2), \ldots, h(a_{n_j}))$;
+
+    3. for each constant symbol $c_k$ in $L$, we have $h(c_k^{\mathcal{A}}) = c_k^{\mathcal{B}}$.
+\end{definition}
+
+\begin{theorem}
+    The injective morphisms in $Str(L)$ are precisely the embeddings; the surjective morphisms in $Str(L)$ are precisely the surjective homomorphisms.
+\end{theorem}
+
+\begin{definition}
+    Given two $L$-structures $\mathcal{A}$ and $\mathcal{B}$, we say that $\mathcal{A}$ is a substructure of $\mathcal{B}$, denoted by $\mathcal{A}\subseteq \mathcal{B}$, if $A\subseteq B$ and the inclusion map $i: A\to B$ is an embedding.
+\end{definition}
+\bibliographystyle{amsplain}
+\begin{thebibliography}{99}
+
+\end{thebibliography}
+
+
+\end{document}
