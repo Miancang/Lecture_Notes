@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  11 SEP 2025 14:12
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  11 SEP 2025 15:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -501,42 +501,37 @@ Package hyperref Info: Link coloring ON on input line 28.
 
 
 [1]
-Overfull \hbox (24.31856pt too wide) in paragraph at lines 132--133
-[][]\TU/lmr/bx/n/12 Definition 2.5. []\TU/lmr/m/n/12 Let $\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; [] ; x[]\OT1/cmr/m/n/12 )$ \TU/lmr/m/n/12 be an $\OML/cmm/m/it/12 L$\TU/lmr/m/n/12 -term with variables among $\OML/cmm/m/it/12 x[]; x[]; [] ; x[]$\TU/lmr/m/n/12 .
- []
 
-
-Overfull \hbox (6.00516pt too wide) detected at line 141
-\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]; [] ; a[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]; [] ; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]; [] ; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; t[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]; [] ; a[]\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 :
- []
+LaTeX Warning: Empty `thebibliography' environment on input line 138.
 
 
 
-[2]
-
-LaTeX Warning: Empty `thebibliography' environment on input line 173.
-
-
-
-[3] (./Notes.aux)
+[2] (./Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: E55525EE92820F287259D9367DDA0BF6;607.
+
+
+Package rerunfilecheck Warning: File `Notes.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Notes.out':
+(rerunfilecheck)             Before: 6E9815AF154A8DE5F2CFEC2D8C4F7782;185
+(rerunfilecheck)             After:  F5BBBEEF0F77EC16954D5E8B645A8230;311.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 31 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21144 strings out of 473832
- 399231 string characters out of 5733158
- 783966 words of memory out of 5000000
- 43712 multiletter control sequences out of 15000+600000
- 566517 words of font info for 72 fonts, out of 8000000 for 9000
+ 21135 strings out of 473832
+ 399095 string characters out of 5733158
+ 779491 words of memory out of 5000000
+ 43706 multiletter control sequences out of 15000+600000
+ 565589 words of font info for 69 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 98i,7n,101p,590b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,7n,101p,590b,588s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Notes.pdf (3 pages).
+Output written on Notes.pdf (2 pages).

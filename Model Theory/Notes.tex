@@ -87,10 +87,89 @@
 \begin{definition}
     Given two $L$-structures $\mathcal{A}$ and $\mathcal{B}$, we say that $\mathcal{A}$ is a substructure of $\mathcal{B}$, denoted by $\mathcal{A}\subseteq \mathcal{B}$, if $A\subseteq B$ and the inclusion map $i: A\to B$ is an embedding.
 \end{definition}
+
+\section{Terms and Formulas}
+
+\subsection{Syntax}
+
+\begin{definition}
+    Let $L$ be a signature. The set of $L$-terms is defined inductively as follows:
+
+    1. Every variable is an $L$-term.
+
+    2. Every constant symbol in $L$ is an $L$-term.
+
+    3. If $f$ is an $n$-ary function symbol in $L$ and $t_1, t_2, \ldots, t_n$ are $L$-terms, then $f(t_1, t_2, \ldots, t_n)$ is an $L$-term.
+
+    4. Nothing else is an $L$-term.
+\end{definition}
+
+\begin{remark}
+    A term is called closed if it contains no variables.
+\end{remark}
+
+\begin{remark}
+    The complexity of a term $t$, denoted by $c(t)$, is defined inductively as follows:
+    
+    1. If $t$ is a variable or a constant symbol, then $c(t) = 0$.
+
+    2. If $t$ is of the form $f(t_1, t_2, \ldots, t_n)$, where $f$ is an $n$-ary function symbol and $t_1, t_2, \ldots, t_n$ are $L$-terms, then $c(t) = 1 + \max(c(t_1), c(t_2), \ldots, c(t_n))$.
+\end{remark}
+
+\begin{definition}
+    Let $L$ be a signature. The set of atomic $L$-formulas is defined as follows:
+
+    1. If $t_1$ and $t_2$ are $L$-terms, then $(t_1 = t_2)$ is an atomic $L$-formula.
+
+    2. If $R$ is an $n$-ary relation symbol in $L$ and $t_1, t_2, \ldots, t_n$ are $L$-terms, then $R(t_1, t_2, \ldots, t_n)$ is an atomic $L$-formula.
+
+    3. Nothing else is an atomic $L$-formula.
+\end{definition}
+
+\subsection{Semantics}
+
+\begin{definition}
+    Let $t(x_1, x_2, \ldots, x_n)$ be an $L$-term with variables among $x_1, x_2, \ldots, x_n$. Let $\mathcal{A}$ be an $L$-structure and let $a_1, a_2, \ldots, a_n\in A$. The interpretation of $t$ in $\mathcal{A}$ at $(a_1, a_2, \ldots, a_n)$, denoted by $t^{\mathcal{A}}(a_1, a_2, \ldots, a_n)$, is defined inductively as follows:
+
+    1. If $t$ is a variable $x$, then $t^{\mathcal{A}}(a) = a$.
+
+    2. If $t$ is a constant symbol $c$, then $t^{\mathcal{A}}() = c^A$.(Here we use $c^A$ to indicate $c^A$ live in the semantics world.)
+
+    3. If $t$ is of the form $f(t_1, t_2, \ldots, t_m)$, where $f$ is an $m$-ary function symbol and $t_1, t_2, \ldots, t_m$ are $L$-terms, then
+    \[
+        t^{\mathcal{A}}(a_1, a_2, \ldots, a_n) = f^{\mathcal{A}}(t_1^{\mathcal{A}}(a_1, a_2, \ldots, a_n), t_2^{\mathcal{A}}(a_1, a_2, \ldots, a_n), \ldots, t_m^{\mathcal{A}}(a_1, a_2, \ldots, a_n)).
+    \]
+    
+\end{definition}
+
+\begin{definition}
+    Let $\varphi(x_1, x_2, \ldots, x_n)$ be an atomic $L$-formula with variables among $x_1, x_2, \ldots, x_n$. Let $\mathcal{A}$ be an $L$-structure and let $a_1, a_2, \ldots, a_n\in A$. We say that $\varphi$ is true in $\mathcal{A}$ at $(a_1, a_2, \ldots, a_n)$, or $(a_1, a_2, \ldots, a_n)$ satisfies $\varphi$ in $\mathcal{A}$, denoted by $\mathcal{A}\models \varphi(a_1, a_2, \ldots, a_n)$, if one of the following conditions holds:
+
+    1. If $\varphi$ is of the form $(t_1 = t_2)$, where $t_1$ and $t_2$ are $L$-terms, then $\mathcal{A}\models \varphi(a_1, a_2, \ldots, a_n)$ if and only if $t_1^{\mathcal{A}}(a_1, a_2, \ldots, a_n) = t_2^{\mathcal{A}}(a_1, a_2, \ldots, a_n)$.
+
+    2. If $\varphi$ is of the form $R(t_1, t_2, \ldots, t_m)$, where $R$ is an $m$-ary relation symbol and $t_1, t_2, \ldots, t_m$ are $L$-terms, then $\mathcal{A}\models \varphi(a_1, a_2, \ldots, a_n)$ if and only if $(t_1^{\mathcal{A}}(a_1, a_2, \ldots, a_n), t_2^{\mathcal{A}}(a_1, a_2, \ldots, a_n), \ldots, t_m^{\mathcal{A}}(a_1, a_2, \ldots, a_n))\in R^{\mathcal{A}}$.
+\end{definition}
+
+\begin{theorem}
+    Let $A, B$ be two $L$-structures and let $f: A\to B$ be a morphism. Let $\varphi(x_1, x_2, \ldots, x_n)$ be an atomic $L$-formula with variables among $x_1, x_2, \ldots, x_n$. Then for all $a_1, a_2, \ldots, a_n\in A$, $f(t^{A}(a_1, a_2, \ldots, a_n)) = t^{B}(f(a_1), f(a_2), \ldots, f(a_n))$.
+\end{theorem}
+
+\begin{corollary}
+    Let $A, B$ be two $L$-structures and let $f: A\to B$ be a morphism of $\mathbf{Set}$. Then:
+
+    1. $f$ is a morphism of $Str(L)$ if and only if for every atomic $L$-formula $\varphi(x_1, x_2, \ldots, x_n)$ and all $a_1, a_2, \ldots, a_n\in A$,
+   \[
+    \mathcal{A}\models \varphi(a_1, a_2, \ldots, a_n) \implies \mathcal{B}\models \varphi(f(a_1), f(a_2), \ldots, f(a_n)).
+   \]
+
+    2. If $f$ is an embedding, then for every atomic $L$-formula $\varphi(x_1, x_2, \ldots, x_n)$ and all $a_1, a_2, \ldots, a_n\in A$,
+    \[
+    \mathcal{A}\models \varphi(a_1, a_2, \ldots, a_n) \iff \mathcal{B}\models \varphi(f(a_1), f(a_2), \ldots, f(a_n)).
+    \]
+\end{corollary}
+
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
-
 \end{thebibliography}
-
 
 \end{document}
