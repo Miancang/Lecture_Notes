@@ -168,6 +168,132 @@
     \]
 \end{corollary}
 
+\section{Canonical Models}
+
+\begin{lemma}
+    Let $\mathcal{A}$ and $\mathcal{B}$ be $L$-structures, and let $\bar{a} = (a_1, \ldots, a_n) \in A^n$, $\bar{b} = (b_1, \ldots, b_n) \in B^n$. Consider the expanded signatures $L(\bar{c})$ where $\bar{c} = (c_1, \ldots, c_n)$ are new constant symbols, and the $L(\bar{c})$-structures $(\mathcal{A}, \bar{a})$ and $(\mathcal{B}, \bar{b})$ interpreting $c_i$ as $a_i$ and $b_i$ respectively.
+
+    The following are equivalent:
+    \begin{enumerate}
+        \item For every atomic $L(\bar{c})$-sentence $\varphi$, if $(\mathcal{A}, \bar{a}) \models \varphi$ then $(\mathcal{B}, \bar{b}) \models \varphi$.
+        \item There exists a homomorphism $f: \langle \bar{a} \rangle_{\mathcal{A}} \to \mathcal{B}$ such that $f(a_i) = b_i$ for all $i$.
+    \end{enumerate}
+    Moreover, the homomorphism $f$ in (2) is unique if it exists, and $f$ is an embedding if and only if
+    \[
+        \text{for every atomic $L(\bar{c})$-sentence $\varphi$, } (\mathcal{A}, \bar{a}) \models \varphi \iff (\mathcal{B}, \bar{b}) \models \varphi.
+    \]
+\end{lemma}
+
+\begin{definition}
+    Let $L$ be a signature and $A$ be a $L$-structure. A set $T$ of atomic $L$-sentences is called a closed set of atomic $L$-sentences if the following conditions hold:
+
+    1. For every closed term $t$, the sentence $(t = t)$ is in $T$.
+
+    2. For every $n$-ary function symbol $f$ and closed terms $t_1, t_2, \ldots, t_n, s_1, s_2, \ldots, s_n$, if the sentences $(t_1 = s_1), (t_2 = s_2), \ldots, (t_n = s_n)$ and $(f(t_1, t_2, \ldots, t_n) = r)$ are in $T$, then the sentence $(f(s_1, s_2, \ldots, s_n) = r)$ is also in $T$.
+\end{definition}
+
+TBC
+
+\section{First-Order Logic}
+
+\subsection{Syntax}
+
+\begin{definition}
+    Let $L$ be a signature. The class of $L$-formulas is defined inductively as follows:
+
+    1. Every atomic $L$-formula is an $L$-formula.
+
+    2. If $\varphi$ is an $L$-formula, then $(\neg \varphi)$ is also an $L$-formula. If $\Phi$ is a set of atmoic $L$-formulas, then $(\bigwedge_{\varphi\in \Phi} \varphi)$ and $(\bigvee_{\varphi\in \Phi} \varphi)$ are also $L$-formulas.
+
+    3. If $\varphi$ is an $L$-formula and $x$ is a variable, then $(\forall x \varphi)$ and $(\exists x \varphi)$ are also $L$-formulas.
+\end{definition}
+
+\subsection{Semantics}
+
+\begin{definition}
+    Let $A$ be an $L$-structure. The satisfaction relation $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ for an $L$-formula $\varphi(x_1, x_2, \ldots, x_n)$ and elements $a_1, a_2, \ldots, a_n \in A$ is defined inductively as follows:
+
+    1. If $\varphi$ is an atomic $L$-formula, then $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ is defined as in the previous section.
+
+    2. If $\varphi$ is of the form $(\neg \psi)$, then $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ if and only if $\mathcal{A} \not\models \psi(a_1, a_2, \ldots, a_n)$.
+
+    3. If $\varphi$ is of the form $(\bigwedge_{\psi\in \Phi} \psi)$, where $\Phi$ is a set of $L$-formulas, then $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ if and only if for every $\psi \in \Phi$, $\mathcal{A} \models \psi(a_1, a_2, \ldots, a_n)$.
+
+    4. If $\varphi$ is of the form $(\bigvee_{\psi\in \Phi} \psi)$, where $\Phi$ is a set of $L$-formulas, then $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ if and only if for some $\psi \in \Phi$, $\mathcal{A} \models \psi(a_1, a_2, \ldots, a_n)$.
+
+    5. If $\varphi$ is of the form $(\forall x \psi)$, then $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ if and only if for every $b \in A$, $\mathcal{A} \models \psi(b, a_1, a_2, \ldots, a_n)$.
+
+    6. If $\varphi$ is of the form $(\exists x \psi)$, then $\mathcal{A} \models \varphi(a_1, a_2, \ldots, a_n)$ if and only if there exists some $b \in A$ such that $\mathcal{A} \models \psi(b, a_1, a_2, \ldots, a_n)$.
+\end{definition}
+
+\begin{remark}
+    We can define the (infinity) language $L_{\infty \omega}$ to be the collection of all $L$-formulas.
+\end{remark}
+
+\begin{definition}
+    Let $L$ be a signature, the first-order language over $L$, denoted by $L_{\omega \omega}$, is the collection of all $L$-formulas where the conjunctions and disjunctions are finite.
+\end{definition}
+
+\begin{definition}
+    Fix a signature $L$. A sentence is an $L$-formula with no free variables. A class $T$ of $L$-sentences is called a theory.
+\end{definition}
+
+\begin{definition}
+    Let $L$ be a signature and $T$ be a theory of $L$. An $L$-structure $\mathcal{A}$ is called a model of $T$, denoted by $\mathcal{A} \models T$, if for every sentence $\varphi \in T$, we have $\mathcal{A} \models \varphi$.
+\end{definition}
+
+\begin{definition}
+    Let $T$ be a theory in $L_{\infty \omega}$ and $K$ a class of $L$-structures. We say that $T$ axiomatizes $K$ if for every $L$-structure $\mathcal{A}$, $\mathcal{A} \in K$ if and only if $\mathcal{A} \models T$.
+\end{definition}
+
+\section{Compactness Theorem}
+
+\begin{definition}
+    A theory $T$ in $L_{\infty \omega}$ is called a Hintikka set if it satisfies the following conditions:
+
+    1. For every closed term $t$, the sentence $(t = t)$ is in $T$.
+
+    2. If $\varphi \in T$, then $(\neg \varphi) \in T$.
+
+    3. If $\varphi$ is an atmoic formula in $T$, $s,t$ are closed terms, and $(s = t) \in T$, then the $\varphi(s)$ is in $T$ if and only if $\varphi(t)$ is in $T$.
+
+    4. If $(\neg \neg \varphi) \in T$, then $\varphi \in T$.
+
+    5. If $(\bigwedge_{\varphi\in \Phi} \varphi) \in T$, then for every $\varphi \in \Phi$, we have $\varphi \in T$; if $\neg(\bigwedge_{\varphi\in \Phi} \varphi) \in T$, then there exists some $\varphi \in \Phi$ such that $(\neg \varphi) \in T$.
+
+    6. If $(\bigvee_{\varphi\in \Phi} \varphi) \in T$, then there exists some $\varphi \in \Phi$ such that $\varphi \in T$; if $\neg(\bigvee_{\varphi\in \Phi} \varphi) \in T$, then for every $\varphi \in \Phi$, we have $(\neg \varphi) \in T$.
+
+    7. If $(\forall x \varphi) \in T$, then for every closed term $t$, we have $\varphi(t) \in T$; if $(\neg \forall x \varphi) \in T$, then there exists some closed term $t$ such that $(\neg \varphi(t)) \in T$.
+
+    8. If $(\exists x \varphi) \in T$, then there exists some closed term $t$ such that $\varphi(t) \in T$; if $(\neg \exists x \varphi) \in T$, then for every closed term $t$, we have $(\neg \varphi(t)) \in T$.
+\end{definition}
+
+\begin{example}
+    Let $T$ be the class of all $L$-sentences that are true in some $L$-structure $\mathcal{A}$. Then $T$ is a Hintikka set.
+\end{example}
+
+\begin{theorem}
+    Let $T$ be a Hintikka set in $L_{\omega \omega}$. Then there exists an $L$-structure $\mathcal{A}$ such that $\mathcal{A} \models T$.
+\end{theorem}
+
+\begin{theorem}
+    Let $L$ be a first-order language and $T$ be a theory in $L$. $T$ is a Hintikka set if it satisfies the following conditions:
+
+    1. Every finite subset of $T$ has a model;
+
+    2. For every sentence $\varphi \in L$, either $\varphi \in T$ or $(\neg \varphi) \in T$.
+    
+    3. For every sentence $\exists x \varphi(x) \in T$, there exists some closed term $t\in L$ such that $\varphi(t) \in T$.
+
+
+\end{theorem}
+
+\begin{theorem}[Compactness Theorem]
+    Let $L$ be a first-order language and $T$ be a theory in $L$. If every finite subset of $T$ has a model, then $T$ has a model.
+\end{theorem}
+
+
+
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
 \end{thebibliography}

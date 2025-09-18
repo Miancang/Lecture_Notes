@@ -132,6 +132,43 @@
 \begin{remark}[Function]
     A function $f$ from a set $A$ to a set $B$, denoted by $f: A \to B$, is a subset of $A\times B$ such that for every $a\in A$, there exists a unique $b\in B$ such that $(a, b)\in f$. The set $A$ is called the domain of $f$ and the set $B$ is called the codomain of $f$. The element $b$ is called the image of $a$ under $f$, denoted by $f(a)$.
 \end{remark}
+
+\begin{axiom}[Axiom of Choice]
+    For any relation $R$, there exists a function $f$ such that for every $x$, if there exists a $y$ where $dom(f) = dom(R)$ and $ran(f) \subseteq ran(R)$, and $(x, f(x))\in R$.
+\end{axiom}
+
+\section{Natural Numbers}
+
+\begin{definition}
+    Let $S$ be a set, we define the successor of $S$ as $S^+ = S \cup \{S\}$.
+\end{definition}
+\begin{remark}
+    Denote $0 = \emptyset$, $1 = 0^+ = \{\emptyset\}$, $2 = 1^+ = \{\emptyset, \{\emptyset\}\}$, $3 = 2^+ = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}$, and so on.
+\end{remark}
+
+\begin{definition}[Inductive Set]
+    A set $A$ is called inductive if $\emptyset \in A$ and for every $x\in A$, $x^+ \in A$.
+\end{definition}
+
+\begin{axiom}[Axiom of Infinity]
+    There exists an inductive set.  
+    \[
+        \exists A (\emptyset \in A \land \forall x (x\in A \to x^+ \in A)).
+    \]
+\end{axiom}
+
+\begin{theorem}
+    There exists a set $\omega$ consisting of exactly the natural numbers.
+\end{theorem}
+
+\begin{proof}
+    Suppose $A$ is an inductive set. We use the subset axiom instead of the intersection because the set of all inductive sets may not exist. Let
+    \[
+        \omega = \{x\in A: \forall B (B \text{ is inductive} \to x\in B)\}.
+    \]
+\end{proof}
+
+
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
 
