@@ -166,7 +166,27 @@
     \[
         \omega = \{x\in A: \forall B (B \text{ is inductive} \to x\in B)\}.
     \]
+
+    We can show that every element in $\omega$ is either $\emptyset$ or the successor of an element in $\omega$. Thus, $\omega$ consists of exactly the natural numbers.
 \end{proof}
+
+\begin{theorem}
+    The set $\omega$ is the smallest inductive set, i.e., $\omega$ is an inductive set and for any inductive set $A$, $\omega \subseteq A$.
+\end{theorem}
+
+\begin{definition}
+    A set $A$ is called transitive if it satisfies the following equivalent conditions:
+    
+    1. for every $x\in A$, if $y\in x$, then $y\in A$;
+
+    2. $A \subseteq \mathcal{P}(A)$;
+
+    3. $\bigcup A \subseteq A$.
+\end{definition}
+
+\begin{theorem}
+    Every natural number is a transitive set.
+\end{theorem}
 
 
 \bibliographystyle{amsplain}

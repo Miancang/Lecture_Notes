@@ -248,6 +248,8 @@ TBC
 
 \section{Compactness Theorem}
 
+\subsection{Teminology}
+
 \begin{definition}
     A theory $T$ in $L_{\infty \omega}$ is called a Hintikka set if it satisfies the following conditions:
 
@@ -287,15 +289,47 @@ TBC
 
 
 \end{theorem}
+\subsection{Main Theorems}
 
 \begin{theorem}[Compactness Theorem]
     Let $L$ be a first-order language and $T$ be a theory in $L$. If every finite subset of $T$ has a model, then $T$ has a model.
 \end{theorem}
 
+\subsection{Filters and Ultrafilters}
 
+\begin{definition}
+    Given a set $S$, a filter $\mathcal{F}$ is a subset of $\mathcal{P}(S)$ such that:
+
+    1. $\emptyset \notin \mathcal{F}$;
+
+    2. if $A, B \in \mathcal{F}$, then $A \cap B \in \mathcal{F}$;
+
+    3. if $A \in \mathcal{F}$ and $A \subseteq B \subseteq S$, then $B \in \mathcal{F}$.
+\end{definition}
+
+\begin{definition}
+    A filter $\mathcal{U}$ on a set $S$ is called an ultrafilter if for every $A \subseteq S$, either $A \in \mathcal{U}$ or $S \setminus A \in \mathcal{U}$.
+\end{definition}
+
+\begin{theorem}
+    If $\mathcal{F}$ is a filter on a set $S$, $F_1, F_2, \ldots, F_n$ are subsets of $S$, then $F_1 \cap F_2 \cap \ldots \cap F_n \neq \emptyset$.
+\end{theorem}
+
+\begin{theorem}
+    Let $S$ be a set and $\mathcal{F}\subseteq \mathcal{P}(S)$. If $\mathcal{F}$ has the finite intersection property, i.e., for every finite subset $\{F_1, F_2, \ldots, F_n\} \subseteq \mathcal{F}$, we have $F_1 \cap F_2 \cap \ldots \cap F_n \neq \emptyset$, then there exists an ultrafilter $\mathcal{U}$ on $S$ such that $\mathcal{F} \subseteq \mathcal{U}$.
+\end{theorem}
+\begin{proof}
+    Notice that given a subset of $\mathcal{P}(S)$ which satisfies the finite intersection property, we can find a filter containing it. Furthermore, we can add $X$ or $S\setminus X$ for any $X\subseteq S$ to the subset so that the finite intersection property still holds. By Zorn's lemma(?Maybe transfinite induction, i have no idea why zorn's lemma fails), we can find a maximal such subset, which gives rise to an ultrafilter (Actually if a subset satisfying finite intersection property and contains every one of the pair of the complements, then itself is an ultrafilter).
+\end{proof}
+
+\subsection{Proof}
+
+\begin{proof}
+    Given $\varphi \in T$, we can define $T_\varphi = \{\text{finite subsets of } T \text{ containing } \varphi \text{ (that have a model)}\}$, $\mathcal{F} = \{T_\varphi: \varphi \in T\}$. It is easy to see that $\mathcal{F}$ has the finite intersection property. By the previous theorem, there exists an ultrafilter $\mathcal{U}$ on $T$ such that $\mathcal{F} \subseteq \mathcal{U}$.
+\end{proof}
 
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
 \end{thebibliography}
 
-\end{document}
+\end{document}I
