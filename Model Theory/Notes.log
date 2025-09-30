@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  25 SEP 2025 11:55
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  30 SEP 2025 11:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -528,29 +528,45 @@ Overfull \hbox (35.1558pt too wide) in paragraph at lines 214--215
 
 [4]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 324.
+[5]
+Overfull \hbox (8.61656pt too wide) detected at line 339
+\OT1/cmr/m/n/12 ([(\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 )]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [(\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 )]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 [(\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 )]) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R[]  \OMS/cmsy/m/n/12 ([])  f\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X \OT1/cmr/m/n/12 : (\OML/cmm/m/it/12 a[]; a[]; [] ; a[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R[]\OMS/cmsy/m/n/12 g 2 U\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (15.32239pt too wide) detected at line 354
+[] \OMS/cmsy/m/n/12 A[]\OML/cmm/m/it/12 =\OMS/cmsy/m/n/12 U j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 ([(\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 )]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [(\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 )]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/m/n/12 [(\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 )])  \OMS/cmsy/m/n/12 ([])  f\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 A[] j[]\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a[]; a[]; [] ; a[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g 2 U\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (73.66516pt too wide) in paragraph at lines 361--362
+[]\TU/lmr/m/n/12 Given $\OML/cmm/m/it/12 ' \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 T$\TU/lmr/m/n/12 , we can define $\OML/cmm/m/it/12 T[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f[]\OML/cmm/m/it/12 T[]'[]\OMS/cmsy/m/n/12 g$\TU/lmr/m/n/12 ,
+ []
+
+
+LaTeX Warning: Empty `thebibliography' environment on input line 370.
 
 
 
-[5] (./Notes.aux)
+[6] (./Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 20EE5EEF5BC5335FE11FC58285753479;1305.
+(rerunfilecheck)             Checksum: 51D87E9FCB0F2519C0F513AEBAADDA1F;1918.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 31 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21161 strings out of 473832
- 399655 string characters out of 5733158
- 784754 words of memory out of 5000000
- 43724 multiletter control sequences out of 15000+600000
- 566842 words of font info for 75 fonts, out of 8000000 for 9000
+ 21168 strings out of 473832
+ 399834 string characters out of 5733158
+ 785414 words of memory out of 5000000
+ 43727 multiletter control sequences out of 15000+600000
+ 566858 words of font info for 77 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 98i,8n,101p,590b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,8n,101p,605b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Notes.pdf (5 pages).
+Output written on Notes.pdf (6 pages).

@@ -322,11 +322,48 @@ TBC
     Notice that given a subset of $\mathcal{P}(S)$ which satisfies the finite intersection property, we can find a filter containing it. Furthermore, we can add $X$ or $S\setminus X$ for any $X\subseteq S$ to the subset so that the finite intersection property still holds. By Zorn's lemma(?Maybe transfinite induction, i have no idea why zorn's lemma fails), we can find a maximal such subset, which gives rise to an ultrafilter (Actually if a subset satisfying finite intersection property and contains every one of the pair of the complements, then itself is an ultrafilter).
 \end{proof}
 
+\begin{definition}
+    Given a collection of sets $M_x$ indexed by a set $X$ and an ultrafilter $\mathcal{U}$ on $X$, the ultraproduct $\prod_{x \in X} M_x/ \mathcal{U}$ is defined as the quotient of the Cartesian product $\prod_{x \in X} M_x$ by the equivalence relation $\sim$ defined as follows: for $(m_x), (n_x) \in \prod_{x \in X} M_x$, we have $(m_x) \sim (n_x)$ if and only if $\{x \in X : m_x = n_x\} \in \mathcal{U}$.
+\end{definition}
+
+
+
+\begin{definition}
+    Given a collection of structures $\mathcal{A}_x$ indexed by a set $X$ and an ultrafilter $\mathcal{U}$ on $X$, we can define the ultraproduct $\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}$ as follows:
+
+    1. The universe of $\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}$ is the ultraproduct of the universes of $\mathcal{A}_x$, i.e., $\prod_{x \in X} A_x/ \mathcal{U}$.
+
+    2. For each $n$-ary relation symbol $R$ in the signature, we define $R^{\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}}$ as follows: for $[(a_x^1)], [(a_x^2)], \ldots, [(a_x^n)] \in \prod_{x \in X} A_x/ \mathcal{U}$, we have
+    \[
+        ([(a_x^1)], [(a_x^2)], \ldots, [(a_x^n)]) \in R^{\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}} \iff \{x \in X : (a_x^1, a_x^2, \ldots, a_x^n) \in R^{\mathcal{A}_x}\} \in \mathcal{U}.
+    \]
+
+    3. For each $n$-ary function symbol $f$ in the signature, we define $f^{\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}}$ as follows: for $[(a_x^1)], [(a_x^2)], \ldots, [(a_x^n)] \in \prod_{x \in X} A_x/ \mathcal{U}$, we have
+    \[
+        f^{\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}}([(a_x^1)], [(a_x^2)], \ldots, [(a_x^n)]) = [(b_x)],
+    \]
+    where $b_x = f^{\mathcal{A}_x}(a_x^1, a_x^2, \ldots, a_x^n)$ for each $x \in X$.
+
+    4. For each constant symbol $c$ in the signature, we define $c^{\prod_{x \in X} \mathcal{A}_x/ \mathcal{U}} = [(c^{\mathcal{A}_x})]$.
+\end{definition}
+
+\begin{theorem}[Łoś's Theorem]
+    Let $\{\mathcal{A}_x : x \in X\}$ be a collection of $L$-structures and $\mathcal{U}$ be an ultrafilter on $X$. For any $L$-formula $\varphi(x_1, x_2, \ldots, x_n)$ and elements $[(a_x^1)], [(a_x^2)], \ldots, [(a_x^n)] \in \prod_{x \in X} A_x/ \mathcal{U}$, we have
+    \[
+        \prod_{x \in X} \mathcal{A}_x/ \mathcal{U} \models \varphi([(a_x^1)], [(a_x^2)], \ldots, [(a_x^n)]) \iff \{x \in X : \mathcal{A}_x \models \varphi(a_x^1, a_x^2, \ldots, a_x^n)\} \in \mathcal{U}.
+    \]
+
+\end{theorem}
+
 \subsection{Proof}
 
 \begin{proof}
     Given $\varphi \in T$, we can define $T_\varphi = \{\text{finite subsets of } T \text{ containing } \varphi \text{ (that have a model)}\}$, $\mathcal{F} = \{T_\varphi: \varphi \in T\}$. It is easy to see that $\mathcal{F}$ has the finite intersection property. By the previous theorem, there exists an ultrafilter $\mathcal{U}$ on $T$ such that $\mathcal{F} \subseteq \mathcal{U}$.
 \end{proof}
+
+
+
+
 
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
