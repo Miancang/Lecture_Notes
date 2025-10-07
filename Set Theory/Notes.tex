@@ -188,6 +188,135 @@
     Every natural number is a transitive set.
 \end{theorem}
 
+\section{Arithmetic of Natural Numbers}
+
+\begin{theorem}
+Let $A$ be a set, $F: A \to A$, $a\in A$. There exists a unique function $f: \omega \to A$ such that.
+\[
+    f(0) = a, \quad f(n^+) = F(f(n))
+\]
+for every $n\in \omega$.
+\end{theorem}
+
+\begin{corollary}
+    Let $\mathbb{N}$ be the set of natural numbers with $e \in \mathbb{N}$. There exist unique functions $\sigma: \mathbb{N} \to \mathbb{N}$ such that:
+
+    1. $\sigma(0) = e$;
+
+    2. $\sigma(n^+) = (\sigma(n))^+$ for every $n\in \mathbb{N}$.
+\end{corollary}
+
+\begin{definition}
+    We can define $A_m: \mathbb{N} \to \mathbb{N}$ as follows:
+    \[
+        A_m(0) = m, \quad A_m(n^+) = (A_m(n))^+
+    \]
+\end{definition}
+
+\begin{definition}
+    For $m, n \in \mathbb{N}$, we define the addition of $m$ and $n$ as:
+    \[
+        m + n = A_m(n).
+    \]
+
+    where $+(-,-): \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ is a function defined by recursion.
+\end{definition}
+
+\begin{theorem}
+    The addition on $\mathbb{N}$ satisfies the following properties:
+
+    1. $m + 0 = m$ for every $m\in \mathbb{N}$;
+
+    2. $m + n^+ = (m + n)^+$ for every $m, n \in \mathbb{N}$;
+
+    3. $m + n = n + m$ for every $m, n \in \mathbb{N}$;
+
+    4. $(m + n) + k = m + (n + k)$ for every $m, n, k \in \mathbb{N}$.
+\end{theorem}
+
+\begin{definition}
+    We can define $M_m: \mathbb{N} \to \mathbb{N}$ as follows:
+    \[
+        M_m(0) = 0, \quad M_m(n^+) = M_m(n) + m
+    \]
+\end{definition}
+
+\begin{theorem}
+    The multiplication on $\mathbb{N}$ satisfies the following properties:
+
+    1. $m \cdot 0 = 0$ for every $m\in \mathbb{N}$;
+
+    2. $m \cdot n^+ = m \cdot n + m$ for every $m, n \in \mathbb{N}$;
+
+    3. $m \cdot n = n \cdot m$ for every $m, n \in \mathbb{N}$;
+
+    4. $(m \cdot n) \cdot k = m \cdot (n \cdot k)$ for every $m, n, k \in \mathbb{N}$;
+
+    5. $m \cdot (n + k) = m \cdot n + m \cdot k$ for every $m, n, k \in \mathbb{N}$.
+
+\end{theorem}
+
+\section{Integers}
+
+\begin{definition}[Equivalence Relation]
+    A relation $R$ on a set $A$ is called an equivalence relation if it satisfies the following properties:
+
+    1. Reflexivity: for every $a\in A$, $(a, a)\in R$;
+
+    2. Symmetry: for every $a, b \in A$, if $(a, b)\in R$, then $(b, a)\in R$;
+
+    3. Transitivity: for every $a, b, c \in A$, if $(a, b)\in R$ and $(b, c)\in R$, then $(a, c)\in R$.
+\end{definition}
+
+\begin{definition}[Equivalence Class]
+    Let $R$ be an equivalence relation on a set $A$. For every $a\in A$, the equivalence class of $a$ is defined as:
+    \[
+        [a] = \{b\in A: (a, b)\in R\}.
+    \]
+\end{definition}
+
+\begin{definition}
+    A function $f: A \to B$ where $A$ and $B$ are sets equipped with equivalence relations $R_A$ and $R_B$ respectively is called compatible with the equivalence relations if for every $a_1, a_2 \in A$, if $(a_1, a_2)\in R_A$, then $(f(a_1), f(a_2))\in R_B$.
+\end{definition}
+
+\begin{theorem}
+    Let $f: A \to B$ be a function compatible with the equivalence relations $R_A$ and $R_B$. Then $f$ induces an unique well-defined function $\bar{f}: A/R_A \to B/R_B$ defined by:
+    \[
+        \bar{f}([a]) = [f(a)]
+    \]
+    for every $[a] \in A/R_A$.
+\end{theorem}
+
+\begin{definition}[Integers]
+    We define the set of integers $\mathbb{Z}$ as the set of equivalence classes of the relation $R$ on $\mathbb{N} \times \mathbb{N}$ defined by:
+    \[
+        ((a, b), (c, d)) \in R \iff a + d = b + c.
+    \]
+\end{definition}
+
+\begin{definition}[Addition]
+    We define the addition on $\mathbb{Z}$ as follows:
+    \[
+        [(a, b)] + [(c, d)] = [(a + c, b + d)]
+    \]
+    for every $[(a, b)], [(c, d)] \in \mathbb{Z}$.
+\end{definition}
+
+\begin{proposition}
+    The addition on $\mathbb{Z}$ is well-defined and satisfies the following properties:
+
+    1. $x + 0 = x$ for every $x\in \mathbb{Z}$;
+
+    2. $x + y = y + x$ for every $x, y \in \mathbb{Z}$;
+
+    3. $(x + y) + z = x + (y + z)$ for every $x, y, z \in \mathbb{Z}$.
+
+    4. For every $x\in \mathbb{Z}$, there exists $-x \in \mathbb{Z}$ such that $x + (-x) = 0$.
+    
+    5. $[(0, x)] + [(0,y)] = [(0, x + y)]$ for every $x, y \in \mathbb{N}$.
+\end{proposition}
+
+
 
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
