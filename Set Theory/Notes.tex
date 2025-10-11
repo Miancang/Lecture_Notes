@@ -316,6 +316,57 @@ for every $n\in \omega$.
     5. $[(0, x)] + [(0,y)] = [(0, x + y)]$ for every $x, y \in \mathbb{N}$.
 \end{proposition}
 
+\begin{definition}
+    We define the multiplication on $\mathbb{Z}$ as follows:
+    \[
+        [(a, b)] \cdot [(c, d)] = [(ac + bd, ad + bc)]
+    \]
+    for every $[(a, b)], [(c, d)] \in \mathbb{Z}$.
+\end{definition}
+
+\begin{proposition}
+    The multiplication on $\mathbb{Z}$ is well-defined and satisfies the following properties:
+
+    1. $x \cdot 1 = x$ for every $x\in \mathbb{Z}$;
+
+    2. $x \cdot y = y \cdot x$ for every $x, y \in \mathbb{Z}$;
+
+    3. $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ for every $x, y, z \in \mathbb{Z}$;
+
+    4. $x \cdot (y + z) = x \cdot y + x \cdot z$ for every $x, y, z \in \mathbb{Z}$;
+
+    5. $[(0, x)] \cdot [(0,y)] = [(0, xy)]$ for every $x, y \in \mathbb{N}$.
+\end{proposition}
+
+\begin{definition}
+    We define the order relation on $\mathbb{Z}$ as follows:
+    \[
+        [(a, b)] < [(c, d)] \iff a + d < b + c
+    \]
+    for every $[(a, b)], [(c, d)] \in \mathbb{Z}$.
+\end{definition}
+
+\begin{proposition}
+    The order relation on $\mathbb{Z}$ is well-defined and satisfies the following properties:
+
+    1. For every $x, y \in \mathbb{Z}$, exactly one of the following holds: $x < y$, $x = y$, $x > y$;
+
+    2. For every $x, y, z \in \mathbb{Z}$, if $x < y$ and $y < z$, then $x < z$;
+
+    3. For every $x, y, z \in \mathbb{Z}$, if $x < y$, then $x + z < y + z$;
+
+    4. For every $x, y, z \in \mathbb{Z}$, if $0 < x$ and $0 < y$, then $0 < x \cdot y$.
+\end{proposition}
+
+\section{Rational Numbers}
+
+\begin{definition}
+    We define the equivalence relation $R$ on $\mathbb{Z} \times (\mathbb{Z} \setminus \{0\})$ as follows:
+    \[
+        ((a, b), (c, d)) \in R \iff ad = bc.
+    \]
+\end{definition}
+
 
 
 \bibliographystyle{amsplain}
