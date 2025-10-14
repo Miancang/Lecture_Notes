@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  9 OCT 2025 15:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  14 OCT 2025 15:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -508,11 +508,13 @@ Package hyperref Info: Link coloring ON on input line 28.
 
 [4]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 375.
+[5]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 438.
 
 
 
-[5] (./Notes.aux)
+[6] (./Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -524,8 +526,8 @@ Package rerunfilecheck Warning: File `Notes.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Notes.out':
-(rerunfilecheck)             Before: 5F45259684D3E52CDFD562E7C675A095;766
-(rerunfilecheck)             After:  50A6DBA548756F2646FDB0132961FF09;910.
+(rerunfilecheck)             Before: 50A6DBA548756F2646FDB0132961FF09;910
+(rerunfilecheck)             After:  C29419DEE11815B927B87F7F6D8B202E;1034.
  )
 (\end occurred inside a group at level 1)
 
@@ -534,10 +536,10 @@ Package rerunfilecheck Info: Checksums for `Notes.out':
 Here is how much of TeX's memory you used:
  21149 strings out of 473832
  399503 string characters out of 5733158
- 780156 words of memory out of 5000000
+ 780321 words of memory out of 5000000
  43716 multiletter control sequences out of 15000+600000
  565605 words of font info for 71 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 98i,7n,101p,590b,588s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,7n,101p,590b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Notes.pdf (5 pages).
+Output written on Notes.pdf (6 pages).

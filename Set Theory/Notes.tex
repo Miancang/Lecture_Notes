@@ -341,7 +341,7 @@ for every $n\in \omega$.
 \begin{definition}
     We define the order relation on $\mathbb{Z}$ as follows:
     \[
-        [(a, b)] < [(c, d)] \iff a + d < b + c
+        [(a, b)] < [(c, d)] \iff b + c < a + d
     \]
     for every $[(a, b)], [(c, d)] \in \mathbb{Z}$.
 \end{definition}
@@ -365,6 +365,70 @@ for every $n\in \omega$.
     \[
         ((a, b), (c, d)) \in R \iff ad = bc.
     \]
+\end{definition}
+
+\begin{definition}
+    We define the set of rational numbers $\mathbb{Q}$ as the set of equivalence classes of the relation $R$ on $\mathbb{Z} \times (\mathbb{Z} \setminus \{0\})$.
+\end{definition}
+
+\begin{definition}[Addition]
+    We define the addition on $\mathbb{Q}$ as follows:
+    \[
+        [(a, b)] + [(c, d)] = [(ad + bc, bd)]
+    \]
+    for every $[(a, b)], [(c, d)] \in \mathbb{Q}$.
+\end{definition}
+
+\begin{definition}[Multiplication]
+    We define the multiplication on $\mathbb{Q}$ as follows:
+    \[
+        [(a, b)] \cdot [(c, d)] = [(ac, bd)]
+    \]
+    for every $[(a, b)], [(c, d)] \in \mathbb{Q}$.
+\end{definition}
+
+\begin{definition}[Order Relation]
+    We define the order relation on $\mathbb{Q}$ as follows:
+    \[
+        [(a, b)] < [(c, d)] \iff ad < bc
+    \]
+    for every $[(a, b)], [(c, d)] \in \mathbb{Q}$.
+\end{definition}
+
+\section{Real Numbers}
+
+\textbf{Strategy 1: Dedekind Cuts}
+
+\begin{definition}[Dedkind Set]
+    A subset $A$ of $\mathbb{Q}$ is called a Dedekind set if it satisfies the following properties:
+
+    1. $A$ is non-empty and not equal to $\mathbb{Q}$;
+
+    2. for every $x, y \in \mathbb{Q}$, if $x \in A$ and $y < x$, then $y \in A$;
+
+    3. for every $x \in A$, there exists $y \in A$ such that $x < y$.
+\end{definition}
+
+\begin{definition}[Real Numbers]
+    We define the set of real numbers $\mathbb{R}$ as the set of all Dedekind sets or the set of all Cauchy sequences in $\mathbb{Q}$.
+\end{definition}
+
+\textbf{Strategy 2: Cauchy Sequences}
+
+\begin{definition}[Cauchy Sequence]
+    A sequence $(a_n)$ in $\mathbb{Q}$ is called a Cauchy sequence if for every $\epsilon > 0$, there exists $N \in \mathbb{N}$ such that for every $m, n > N$, $|a_n - a_m| < \epsilon$.
+\end{definition}
+
+
+\begin{definition}
+    We define the equivalence relation $R$ on the set of Cauchy sequences in $\mathbb{Q}$ as follows:
+    \[
+        ((a_n), (b_n)) \in R \iff \lim_{n \to \infty} |a_n - b_n| = 0.
+    \]
+\end{definition}
+
+\begin{definition}[Real Numbers]
+    We define the set of real numbers $\mathbb{R}$ as the set of equivalence classes of the relation $R$ on the set of Cauchy sequences in $\mathbb{Q}$.
 \end{definition}
 
 
