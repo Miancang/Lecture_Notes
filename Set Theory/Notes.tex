@@ -319,7 +319,7 @@ for every $n\in \omega$.
 \begin{definition}
     We define the multiplication on $\mathbb{Z}$ as follows:
     \[
-        [(a, b)] \cdot [(c, d)] = [(ac + bd, ad + bc)]
+        [(a, b)] \cdot [(c, d)] = [(ad + bc, ac + bd)]
     \]
     for every $[(a, b)], [(c, d)] \in \mathbb{Z}$.
 \end{definition}
@@ -444,6 +444,41 @@ In this subsection, we will use the Dedekind cut approach to define the arithmet
     \]
     for every $A, B \in \mathbb{R}$.
 \end{definition}
+
+\begin{theorem}
+    Let $x \in \mathbb{R}$. There exists a unique $-x \in \mathbb{R}$ such that $x + (-x) = 0$.
+\end{theorem}
+
+\begin{definition}
+    We define the multiplication on $\mathbb{R}$ as follows:
+    \[
+        A \cdot B = \{x \cdot y: x \in A, y \in B\}
+    \]
+    for every $A, B \in \mathbb{R}$.
+\end{definition}
+
+\begin{theorem}
+    The embedding $\iota$ of $\mathbb{Q}$ into $\mathbb{R}$ preserves order, addition and multiplication, i.e., for every $p, q \in \mathbb{Q}$,
+    \[
+        p < q \iff \iota(p) < \iota(q),
+    \]
+    \[
+        \iota(p + q) = \iota(p) + \iota(q),
+    \]
+    \[
+        \iota(p \cdot q) = \iota(p) \cdot \iota(q).
+    \]
+\end{theorem}
+
+\section{Finite Sets}
+
+\begin{theorem}[Cartors' Theorem]
+    For any set $A$, $|A| < |\mathcal{P}(A)|$.
+\end{theorem}
+
+\begin{theorem}[Pigeonhole Principle]
+    No natural number has the same cardinality as a proper subset of itself.
+\end{theorem}
 
 \bibliographystyle{amsplain}
 \begin{thebibliography}{99}
